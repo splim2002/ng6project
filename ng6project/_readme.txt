@@ -5,5 +5,34 @@
 
 ——————————————————————————————————————————————————————
 Updates:
+#(1) Upgrade Angular 5 to 6
+Refer to this article: http://www.talkingdotnet.com/upgrade-angular-5-app-angular-6-visual-studio-2017/
 
+
+========
+My CMD in this project
+========
+Open CommandLine
+> npm install @angular/cli@latest -g
+> cd ClientApp
+> npm i @angular/cli
+> ng update @angular/cli
+	- angular-cli.json (for angular5) is deleted and angular.json (for angular6) is created.
+	- if angular.json is not found at first run, give it a second try.
+> ng update @angular/core
+> ng update
+	- to identify and update other dependencies
+
+##Angular 6 now depends on TypeScript 2.7 and RxJS 6. So, we need to upgrade RxJS. You would be already thinking about making the code changes manually everywhere RxJS imports and operators are used. Don’t worry, there’s a package that takes care of this. Run the following commands to upgrade RxJS.
+> npm install -g rxjs-tslint
+> npm install rxjs-compat --save
+	- install rxjs-compat as it doesnt exist in the package.json
+> rxjs-5-to-6-migrate -p src/tsconfig.app.json
+> npm uninstall rxjs-compat
+	- remove rxjs-compat. This package is required to get backwards compatibility with RxJS previous to version 6.
+
+> ng serve
+	- remove --extractCss in package.json > "scripts"
+> ng build
+	- build again
 
