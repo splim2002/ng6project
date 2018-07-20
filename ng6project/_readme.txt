@@ -36,3 +36,20 @@ Open CommandLine
 > ng build
 	- build again
 
+====================================================
+#(2) Upgrade bootstrap from version 3 to 4
+#(2.1)
+@CMD ==> C:\projects\ng6project\ng6project
+>npm view bootstrap
+	- check current latest version
+>npm i bootstrap@latest
+	- install the latest version
+>ng build
+
+**You can see existing HTML & CSS and not compatible with Bootstrap 4. Hence, need to update HTML code
+- sample: https://getbootstrap.com/docs/4.0/components/navbar/
+
+**Noted:
+- font icon 'glyphicon' is no longer available in bootstrap 4 package. 
+
+====================================================
