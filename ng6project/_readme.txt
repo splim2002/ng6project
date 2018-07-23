@@ -116,4 +116,6 @@ Reference Links:
 - So it applied to any components that under LayoutProfileComponent
 - When is not login, page redirect to Login Page (Login Component)
 
+#(9.4) Bind form
+
 ====================================================
