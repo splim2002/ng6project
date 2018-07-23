@@ -10,7 +10,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductComponent } from './product/product.component';
 import { Error404Component } from './_shared/error404/error404.component';
-
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   //Site routes goes here 
@@ -30,6 +30,7 @@ const appRoutes: Routes = [
     ]
   },
   //no layout routes
+  { path: 'login', component: LoginComponent },
   { path: '**', component: Error404Component }
 ];
 

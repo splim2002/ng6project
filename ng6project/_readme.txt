@@ -101,6 +101,19 @@ Reference Link: https://stackblitz.com/edit/angular-multi-layout-example?file=ap
 
 Reference Links:
 - https://angular.io/tutorial/toh-pt5#routermoduleforroot
-- (as component) https://www.sitepoint.com/component-routing-angular-router/ 
+- (export as component) https://www.sitepoint.com/component-routing-angular-router/ 
+- (export as constant) https://www.js-tutorials.com/javascript-tutorial/multiple-layout-angular-4-or-5-using-bootstrap-template/
+
+====================================================
+#(9) Login page
+#(9.1)Create Login component 
+>ng generate component login
+
+#(9.2) Create a Service called 'DataService' to folder src/app/_service
+>ng g service data
+
+#(9.3) Add login validation at LayoutProfileComponent
+- So it applied to any components that under LayoutProfileComponent
+- When is not login, page redirect to Login Page (Login Component)
 
 ====================================================

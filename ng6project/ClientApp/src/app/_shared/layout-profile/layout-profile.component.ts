@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../_services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-profile',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public data: DataService, private router: Router) {
+    if (data.loginRequired) {
+      //Force Login
+      this.router.navigate(['login']);
+    } else {
+      //this.router.navigate(['fetch-data']);
+      console.log('Is login');
+    }
+  }
 
   ngOnInit() {
   }

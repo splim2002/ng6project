@@ -12,8 +12,11 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductComponent } from './product/product.component';
 import { Error404Component } from './_shared/error404/error404.component';
+import { LoginComponent } from './login/login.component';
 
 import { appRouting } from './app-routing.module';
+
+import { DataService } from './_services/data.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { appRouting } from './app-routing.module';
     ProductComponent,
     Error404Component,
     LayoutDefaultComponent,
-    LayoutProfileComponent
+    LayoutProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,7 +37,9 @@ import { appRouting } from './app-routing.module';
     FormsModule,
     appRouting
   ],
-  providers: [],
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
