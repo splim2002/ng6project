@@ -86,3 +86,5 @@ installation reference: https://stackoverflow.com/questions/48184079/include-for
 - Import directly in src/style.css or src/style.scss
 
 ====================================================
+#(6) Error 404 page
+- when a route is not exist, system will display error404 

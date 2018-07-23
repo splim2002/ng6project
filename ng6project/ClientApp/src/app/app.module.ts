@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductComponent } from './product/product.component';
+import { Error404Component } from './_shared/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductComponent } from './product/product.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProductComponent
+    ProductComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +30,7 @@ import { ProductComponent } from './product/product.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: '**', component: Error404Component },
     ])
   ],
   providers: [],
