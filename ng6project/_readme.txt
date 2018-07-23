@@ -58,4 +58,17 @@ Open CommandLine
 3.2 Update 'outputPath' in ClientApp/angular.json
 3.3 Delete ClientApp/dist (previous output path)
 3.4 Run 'ng build' at CMD
+
+====================================================
+#(4) Create component
+#(4.1) use command line to create component
+>ng generate component product
+
+*Note:
+If got error: 
+Could not find an NgModule. Use the skip-import option to skip importing in NgModule.
+Try this solution: (Refer to wwwroot/tutorial/004.1.png)
+> cd src/app
+And the run the '>ng generate component product' again
+
 ====================================================
