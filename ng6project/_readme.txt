@@ -53,3 +53,9 @@ Open CommandLine
 - font icon 'glyphicon' is no longer available in bootstrap 4 package. 
 
 ====================================================
+#(3) Change output path
+3.1 Update 'configuration.RootPath' in Startup.cs
+3.2 Update 'outputPath' in ClientApp/angular.json
+3.3 Delete ClientApp/dist (previous output path)
+3.4 Run 'ng build' at CMD
+====================================================
