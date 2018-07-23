@@ -96,3 +96,11 @@ installation reference: https://stackoverflow.com/questions/48184079/include-for
 Reference Link: https://stackblitz.com/edit/angular-multi-layout-example?file=app%2Fapp.routing.ts
 
 ====================================================
+#(8) Tidy up router
+- when more components (page) added, router setting becomes bigger. Hence, instead of place it in app.module.ts, we can split it out as another component/constant
+
+Reference Links:
+- https://angular.io/tutorial/toh-pt5#routermoduleforroot
+- (as component) https://www.sitepoint.com/component-routing-angular-router/ 
+
+====================================================
