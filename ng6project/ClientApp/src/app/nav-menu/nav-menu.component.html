@@ -7,14 +7,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]='{ "show": isExpanded }'>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
-        <a class="nav-link" [routerLink]='["/"]' (click)='collapse()'>Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]='["/"]' (click)='collapse()'><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" [routerLinkActive]='["active"]'>
-        <a class="nav-link" [routerLink]='["/counter"]' (click)='collapse()'>Counter</a>
+        <a class="nav-link" [routerLink]='["/counter"]' (click)='collapse()'><i class="fas fa-globe"></i> Counter</a>
       </li>
       <li class="nav-item" [routerLinkActive]='["active"]'>
-        <a class="nav-link" [routerLink]='["/fetch-data"]' (click)='collapse()'>Fetch data</a>
+        <a class="nav-link" [routerLink]='["/fetch-data"]' (click)='collapse()'><i class="fas fa-database"></i> Fetch data</a>
       </li>
     </ul>
+  </div>
+
+  <div>
+    <div class="profile d-inline-block">
+      <i class="far fa-user"></i>
+    </div>
   </div>
 </nav>

@@ -72,3 +72,17 @@ Try this solution: (Refer to wwwroot/tutorial/004.1.png)
 And the run the '>ng generate component product' again
 
 ====================================================
+#(5) Add font icon, here we use 'Font-Awesome'
+npm package: https://www.npmjs.com/package/@fortawesome/fontawesome
+Office URL: https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css
+installation reference: https://stackoverflow.com/questions/48184079/include-fortawesome-fontawesome-to-angular-cli-project
+
+#(5.1) Installing Webpack from NPM
+@CMD
+>npm i @fortawesome/fontawesome-free
+
+#(5.2) Importing the CSS
+- Configure angular.json (refer to link), OR
+- Import directly in src/style.css or src/style.scss
+
+====================================================
