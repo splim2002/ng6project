@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductComponent } from './product/product.component';
 import { Error404Component } from './_shared/error404/error404.component';
+import { LayoutDefaultComponent } from './_shared/layout-default/layout-default.component';
+import { LayoutProfileComponent } from './_shared/layout-profile/layout-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,16 +22,32 @@ import { Error404Component } from './_shared/error404/error404.component';
     CounterComponent,
     FetchDataComponent,
     ProductComponent,
-    Error404Component
+    Error404Component,
+    LayoutDefaultComponent,
+    LayoutProfileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      //Site routes goes here 
+      {
+        path: '',
+        component: LayoutDefaultComponent,
+        children: [
+          { path: '', component: HomeComponent, pathMatch: 'full' },
+          { path: 'counter', component: CounterComponent }
+        ]
+      },
+      {
+        path: '',
+        component: LayoutProfileComponent,
+        children: [
+          { path: 'fetch-data', component: FetchDataComponent }
+        ]
+      },
+      //no layout routes
       { path: '**', component: Error404Component },
     ])
   ],

@@ -88,3 +88,11 @@ installation reference: https://stackoverflow.com/questions/48184079/include-for
 ====================================================
 #(6) Error 404 page
 - when a route is not exist, system will display error404 
+
+====================================================
+#(7) Implement Multiple Layouts
+- Customize layouts for different pages at router
+
+Reference Link: https://stackblitz.com/edit/angular-multi-layout-example?file=app%2Fapp.routing.ts
+
+====================================================
