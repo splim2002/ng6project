@@ -170,8 +170,16 @@ Reference Links:
 ==> (IMPORTANT) how to set base_url
 Reference: http://www.projectcodify.com/angular-set-base-url-dynamically
 
-- Create component Employee 
+#(11.1.1) Add component "Employees"
+- Create component Employees 
 	>ng g component employees 
 - Add to router & sidebar menu
+
+#(11.1.2) Get Data from Json
+- Call getEmployees() method (from DataService.ts)
+- Display json data at the page (Refer to wwwroot/tutorial/011.1.2.png)
+
+==> ngFor
+Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 
 ====================================================

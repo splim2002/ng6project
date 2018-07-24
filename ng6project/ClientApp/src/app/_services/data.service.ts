@@ -34,7 +34,7 @@ export class DataService {
   }
 
   //Employee Data
-  getEmployees() {
+  getEmployees(): Observable<any> {
     console.log('this.baseUrl ', this.baseUrl);
     return this.http.get(this.baseUrl + 'assets/data/employee-list.json');
   }

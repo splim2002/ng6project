@@ -1,0 +1,26 @@
+//DIV Table
+.detail-list {
+  display: table;
+  width: 100%;
+  border-spacing: 0 10px;
+  margin-bottom: 20px;
+
+  .detail-row {
+    display: table-row;
+    &.header{
+      font-weight: bold;
+    }
+  }
+
+  .detail-col {
+    display: table-cell;
+    padding: 12px 8px;
+    //position: relative;
+  }
+
+  &.has-border {
+    .detail-col {
+      border: 1px solid rgba(133,134,133,0.2);
+    }
+  }
+}

@@ -8,28 +8,38 @@ import { DataService } from '../_services/data.service';
   styleUrls: ['./employees.component.scss']
 })
 
-//@Inject('BASE_URL') baseUrl: string;
 export class EmployeesComponent implements OnInit {
 
-  constructor(private dataSvc: DataService) {
-  }
+  public employeeList: Employee[];
+
+  constructor(private dataSvc: DataService) { }
 
   ngOnInit() {
-    this.dataSvc.getEmployees();
-    //this.httpClient.get<any>(baseUrl + 'assets/data/employee-list.json')
-    //  .subscribe(result => {
-    //    this.employees = result.employees;
-    //    this.departments = result.departments;
-    //  });
-
-    //httpClient.get<Employee[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-    //  this.forecasts = result;
-    //}, error => console.error(error));
+    this.dataSvc.getEmployees()
+      .subscribe(result => {
+        console.log('dataSvc.getEmployees',result);
+        this.employeeList = result.employees;
+      }, err => {
+        console.log('dataSvc.getEmployees ERROR!');
+      });
   }
 
 }
 
 
 interface Employee {
-
+  userId: number;
+  name: EmployeeName;
+  age: number;
+  departmentId: number;
+  phone: string;
+  nationality: string;
+  registeredDate: Date;
+  isAccountActive: boolean;
 }
+
+interface EmployeeName {
+  first: string;
+  last: string;
+}
+
