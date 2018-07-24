@@ -1,0 +1,24 @@
+{
+  "departments": [
+    {
+      "departmentId": 1,
+      "department": "HR"
+    },
+    {
+      "departmentId": 2,
+      "department": "Finance"
+    },
+    {
+      "departmentId": 3,
+      "department": "IT"
+    },
+    {
+      "departmentId": 4,
+      "department": "Marketing"
+    },
+    {
+      "departmentId": 5,
+      "department": "Sales"
+    }
+  ]
+}

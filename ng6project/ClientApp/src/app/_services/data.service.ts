@@ -1,16 +1,18 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-
 //@Injectable({
 //  providedIn: 'root'
 //})
 export class DataService {
 
-  constructor(private http: HttpClient) { }
+  private baseUrl: string = '';
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
 
   //LOGIN
   private token: string = "";
@@ -23,12 +25,18 @@ export class DataService {
   //LOGIN
   login(creds): Observable<boolean> {
     return this.http
-      .post('api/SampleData/CreateToken', creds)
+      .post(this.baseUrl + 'api/SampleData/CreateToken', creds)
       .map((data: any) => {
         this.token = data.token;
         this.tokenExpiration = data.expiration;
         return true;
       });
+  }
+
+  //Employee Data
+  getEmployees() {
+    console.log('this.baseUrl ', this.baseUrl);
+    return this.http.get(this.baseUrl + 'assets/data/employee-list.json');
   }
 
 }

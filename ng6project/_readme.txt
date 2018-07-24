@@ -162,3 +162,13 @@ Reference Links:
 - Output: (Refer to wwwroot/tutorial/010.4.png)
 
 ====================================================
+#(11) Play with sample Data
+#(11.1) List data
+- List out data from sample JSON file
+- Use DataService to get the JSON file data
+
+==> (IMPORTANT) how to set base_url
+Reference: http://www.projectcodify.com/angular-set-base-url-dynamically
+
+
+====================================================
