@@ -118,4 +118,21 @@ Reference Links:
 
 #(9.4) Bind form
 
+#(9.5) Add Validation
+- Add 'novalidate' to form to prevent browser (e.g. HTML5) validation
+[Work File]:
+- ng6project\ClientApp\src\app\login\login.component.html
+
+#(9.6) (Backend) Add API 'CreateToken' & (Frontend) Call the API
+- Backend: This is a temporary login method as this tutorial is focusing on frontend (Angular). 
+	- No database to validate login credential and hard code token.
+	- Set token expiry after 1 day.
+- Frontend: Call the API 'CreateToken' and redirect to fetch-data page when login successfully
+
+[Work File]:
+- ng6project/Controllers/SampleDataController.cs
+- ng6project/ViewModels/LoginViewModel.cs
+- ng6project/ClientApp/src/app/_services/data.service.ts
+- ng6project/ClientApp/src/app/login/login.component.ts
+
 ====================================================

@@ -15,10 +15,19 @@ export class LoginComponent {
     username: '',
     password: ''
   }
+  errorMessage: string = "";
 
   onLogin() {
     //Call login service
     console.log('onlogin', this.creds.username);
+
+    this.data.login(this.creds)
+      .subscribe(success => {
+        if (success) {
+          //redirect
+          this.router.navigate(["/fetch-data"]);
+        } 
+      }, err => this.errorMessage = 'Login Failed');
   }
 
 }

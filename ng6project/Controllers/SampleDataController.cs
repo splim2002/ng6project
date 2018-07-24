@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ng6project.ViewModels;
 
 namespace ng6project.Controllers
 {
@@ -40,5 +42,38 @@ namespace ng6project.Controllers
                 }
             }
         }
+
+        //[HttpPost]
+        //public IActionResult CreateToken([FromBody] LoginViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var results = new
+        //        {
+        //            token = "TESTING123", //TEMPORARY method
+        //            expiration = DateTime.UtcNow.AddMinutes(30)
+        //        };
+        //        return Ok(results);
+
+        //    }
+        //    return BadRequest();
+        //}
+        [HttpPost("[action]")]
+        [AllowAnonymous]
+        public IActionResult CreateToken([FromBody] LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var results = new
+                {
+                    token = "TESTING123", //TEMPORARY method
+                    expiration = DateTime.UtcNow.AddDays(1)
+                };
+                return Ok(results);
+
+            }
+            return BadRequest();
+        }
+
     }
 }
