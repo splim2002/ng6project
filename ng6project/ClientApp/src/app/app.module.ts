@@ -23,6 +23,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ProfileComponent } from './profile/profile.component';
     LayoutProfileComponent,
     LoginComponent,
     SideMenuComponent,
-    ProfileComponent
+    ProfileComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

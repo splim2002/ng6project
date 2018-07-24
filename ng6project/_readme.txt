@@ -170,5 +170,8 @@ Reference Links:
 ==> (IMPORTANT) how to set base_url
 Reference: http://www.projectcodify.com/angular-set-base-url-dynamically
 
+- Create component Employee 
+	>ng g component employees 
+- Add to router & sidebar menu
 
 ====================================================

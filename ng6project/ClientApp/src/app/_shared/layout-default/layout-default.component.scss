@@ -1,18 +1,8 @@
 @import '../../../scss/_color.scss';
 
-
 .container-fluid {
   height: 100%;
   padding: 0;
-
-  > .row {
-    
-    overflow-y: hidden; //don't show content that exceeds my height
-  }
-}
-
-.app-nav-menu{
-
 }
 
 .body-wrapper {
