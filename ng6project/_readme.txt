@@ -149,12 +149,16 @@ Reference Links:
 - ng6project/ClientApp/src/scss/_color.scss
 - ng6project/ClientApp/src/app/_shared/side-menu/side-menu.component.scss (Use @import)
 
-#(10.2) Add profile component
+#(10.3) Add profile component
 - Move '/fetch-data' page to LayoutDefaultComponent, so that login is no longer required when access that page.
 - Instead, apply 'login' to profile & redirect to profile page after login successfully.
 
 [Work File]:
 - ng6project/ClientApp/src/app/app-routing.module.ts
 - ng6project/ClientApp/src/app/login/login.component.ts
+
+#(10.4)
+- Make layout full height
+- Output: (Refer to wwwroot/tutorial/010.4.png)
 
 ====================================================
