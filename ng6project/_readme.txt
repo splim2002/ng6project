@@ -136,3 +136,25 @@ Reference Links:
 - ng6project/ClientApp/src/app/login/login.component.ts
 
 ====================================================
+#(10) Customize layout
+#(10.1) Add sidebar menu
+>ng g component sideMenu
+& move component into src/app/_shared
+
+#(10.2) Add global SCSS
+- add src/scss/_color.scss to define variables
+- access Global Variables (in _color.scss) in components scss
+
+[Work File]:
+- ng6project/ClientApp/src/scss/_color.scss
+- ng6project/ClientApp/src/app/_shared/side-menu/side-menu.component.scss (Use @import)
+
+#(10.2) Add profile component
+- Move '/fetch-data' page to LayoutDefaultComponent, so that login is no longer required when access that page.
+- Instead, apply 'login' to profile & redirect to profile page after login successfully.
+
+[Work File]:
+- ng6project/ClientApp/src/app/app-routing.module.ts
+- ng6project/ClientApp/src/app/login/login.component.ts
+
+====================================================

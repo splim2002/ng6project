@@ -1,12 +1,13 @@
 <app-nav-menu></app-nav-menu>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3">
-      <p>Layout Default</p>
-      <p>Sidebar</p>
-    </div>
-    <div class="col-sm-9 body-content">
-      <router-outlet></router-outlet>
+    <div class="d-flex">
+      <div class="d-none d-sm-block sidebar">
+        <app-side-menu></app-side-menu>
+      </div>
+      <div class="body-content">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>

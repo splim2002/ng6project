@@ -14,7 +14,6 @@ export class LayoutProfileComponent implements OnInit {
       //Force Login
       this.router.navigate(['login']);
     } else {
-      //this.router.navigate(['fetch-data']);
       console.log('Is login');
     }
   }

@@ -1,0 +1,30 @@
+@import '../../../scss/_color.scss';
+
+ul.vertical-sidebar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: $white;
+  width: 80px;
+
+  li {
+    text-align: center;
+    word-break: break-word;
+    padding: 1rem .4rem;
+
+    &.active {
+      background: $green-dark;
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  i {
+    display: block;
+  }
+}
+
+

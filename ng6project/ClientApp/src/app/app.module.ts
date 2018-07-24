@@ -3,20 +3,27 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+//Route
+import { appRouting } from './app-routing.module';
+//Services
+import { DataService } from './_services/data.service';
+
+//Component (Share)
 import { LayoutDefaultComponent } from './_shared/layout-default/layout-default.component';
 import { LayoutProfileComponent } from './_shared/layout-profile/layout-profile.component';
+import { SideMenuComponent } from './_shared/side-menu/side-menu.component';
+import { Error404Component } from './_shared/error404/error404.component';
+
+//Component (Main)
+import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductComponent } from './product/product.component';
-import { Error404Component } from './_shared/error404/error404.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
-import { appRouting } from './app-routing.module';
-
-import { DataService } from './_services/data.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,9 @@ import { DataService } from './_services/data.service';
     Error404Component,
     LayoutDefaultComponent,
     LayoutProfileComponent,
-    LoginComponent
+    LoginComponent,
+    SideMenuComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

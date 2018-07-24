@@ -12,8 +12,8 @@ export class LoginComponent {
   constructor(private data: DataService, private router: Router) { }
 
   public creds = {
-    username: '',
-    password: ''
+    username: 'test@test.com',
+    password: '123'
   }
   errorMessage: string = "";
 
@@ -25,7 +25,7 @@ export class LoginComponent {
       .subscribe(success => {
         if (success) {
           //redirect
-          this.router.navigate(["/fetch-data"]);
+          this.router.navigate(["/profile"]);
         } 
       }, err => this.errorMessage = 'Login Failed');
   }

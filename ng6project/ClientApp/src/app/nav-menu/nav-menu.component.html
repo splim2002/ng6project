@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <a class="navbar-brand" href="#">LOGO</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" [attr.aria-expanded]='isExpanded' (click)='toggle()'>
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]='{ "show": isExpanded }'>
+  <div class="collapse navbar-collapse d-sm-none" id="navbarSupportedContent" [ngClass]='{ "show": isExpanded }'>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]='["active"]' [routerLinkActiveOptions]='{ exact: true }'>
         <a class="nav-link" [routerLink]='["/"]' (click)='collapse()'><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
@@ -20,7 +20,7 @@
 
   <div>
     <div class="profile d-inline-block">
-      <i class="far fa-user"></i>
+      <a [routerLink]="['/profile']"><i class="far fa-user"></i></a>
     </div>
   </div>
 </nav>
