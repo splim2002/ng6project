@@ -1,8 +1,16 @@
-<app-nav-menu></app-nav-menu>
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-flex">
-      <div class="d-none d-sm-block sidebar">
+<div class="container-fluid d-sm-table">
+  <app-nav-menu class="d-sm-table-row"></app-nav-menu>
+  <div class="d-sm-table-row full-height">
+    <!--<div class="d-sm-table-cell">
+      <app-side-menu></app-side-menu>
+    </div>
+    <div class="d-sm-table-cell body-content">
+      <router-outlet></router-outlet>
+    </div>-->
+
+
+    <div class="d-flex body-wrapper">
+      <div class="d-none d-sm-flex sidebar">
         <app-side-menu></app-side-menu>
       </div>
       <div class="body-content">
