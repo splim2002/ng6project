@@ -183,9 +183,19 @@ Reference: http://www.projectcodify.com/angular-set-base-url-dynamically
 Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 
 #(11.1.3) Filter (By using PIPES)
-
+- Create pipe "filterByName" 
+	>ng g pipe filterByName
 ==> Reference: 
 - https://codeburst.io/create-a-search-pipe-to-dynamically-filter-results-with-angular-4-21fd3a5bec5c
 - https://angular.io/guide/pipes
+
+#(11.1.4) Dynamic Sorting (Using PIPES)
+- Create pipe "OrderBy" 
+	>ng g pipe orderBy
+- Refer to image wwwroot/tutorial/011.1.4.png - sort by Registered Date
+
+==> Reference:
+- https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
+- https://stackoverflow.com/questions/36816788/how-do-i-call-an-angular-2-pipe-with-multiple-arguments
 
 ====================================================

@@ -6,17 +6,36 @@
   <input [(ngModel)]="searchText" placeholder="Keyword search" />
 </p>
 
+
 <div class="detail-list has-border" *ngIf="employeeList else empty">
   <div class="detail-row header">
     <div class="detail-col">No.</div>
-    <div class="detail-col">Name</div>
-    <div class="detail-col">Age</div>
+    <div class="detail-col">
+      Name
+    </div>
+    <div class="detail-col" (click)="sortby('age')">
+      Age
+      <i class="fas" *ngIf="sortKey=='age'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
+      <i class="fas fa-sort" *ngIf="sortKey!='age'"></i>
+    </div>
     <div class="detail-col">Department</div>
-    <div class="detail-col">Nationality</div>
-    <div class="detail-col">Registered Date</div>
-    <div class="detail-col">Status</div>
+    <div class="detail-col" (click)="sortby('nationality')">
+      Nationality
+      <i class="fas" *ngIf="sortKey=='nationality'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
+      <i class="fas fa-sort" *ngIf="sortKey!='nationality'"></i>
+    </div>
+    <div class="detail-col" (click)="sortby('registeredDate')">
+      Registered Date
+      <i class="fas" *ngIf="sortKey=='registeredDate'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
+      <i class="fas fa-sort" *ngIf="sortKey!='registeredDate'"></i>
+    </div>
+    <div class="detail-col" (click)="sortby('isAccountActive')">
+      Status
+      <i class="fas" *ngIf="sortKey=='isAccountActive'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
+      <i class="fas fa-sort" *ngIf="sortKey!='isAccountActive'"></i>
+    </div>
   </div>
-  <div class="detail-row" *ngFor="let employee of employeeList | filterByName : searchText; let i = index">
+  <div class="detail-row" *ngFor="let employee of employeeList | orderBy: sortKey : reverse | filterByName : searchText; let i = index">
     <div class="detail-col">{{i+1}}</div>
     <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
     <div class="detail-col">{{employee.age}}</div>
@@ -27,4 +46,4 @@
   </div>
 </div>
 
-<ng-template #empty> No Customers Yet </ng-template>
+<ng-template #empty> No Employees </ng-template>

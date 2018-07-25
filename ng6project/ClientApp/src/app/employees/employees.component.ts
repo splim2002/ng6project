@@ -4,6 +4,7 @@ import { DataService } from '../_services/data.service';
 
 //Pipe
 import { FilterByNamePipe } from '../filter-by-name.pipe';
+import { OrderByPipe } from '../order-by.pipe';
 
 @Component({
   selector: 'app-employees',
@@ -14,6 +15,8 @@ import { FilterByNamePipe } from '../filter-by-name.pipe';
 export class EmployeesComponent implements OnInit {
 
   public employeeList: Employee[];
+  public sortKey: string = 'nationality';
+  public reverse: boolean = false;
 
   constructor(private dataSvc: DataService) { }
 
@@ -26,6 +29,16 @@ export class EmployeesComponent implements OnInit {
         console.log('dataSvc.getEmployees ERROR!');
       });
   }
+
+  sortby(selected_sort) {
+    if (this.sortKey == selected_sort) {
+      this.reverse = !this.reverse;
+    } else {
+      this.sortKey = selected_sort;
+      this.reverse = false;
+    }
+  }
+
 }
 
 interface Employee {
@@ -43,4 +56,3 @@ interface EmployeeName {
   first: string;
   last: string;
 }
-

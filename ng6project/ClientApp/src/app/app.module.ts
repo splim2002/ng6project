@@ -10,6 +10,7 @@ import { DataService } from './_services/data.service';
 
 //Pipe
 import { FilterByNamePipe } from './filter-by-name.pipe';
+import { OrderByPipe } from './order-by.pipe';
 
 //Component (Share)
 import { LayoutDefaultComponent } from './_shared/layout-default/layout-default.component';
@@ -28,6 +29,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeesComponent } from './employees/employees.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import { EmployeesComponent } from './employees/employees.component';
     SideMenuComponent,
     ProfileComponent,
     EmployeesComponent,
-    FilterByNamePipe
+    FilterByNamePipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
