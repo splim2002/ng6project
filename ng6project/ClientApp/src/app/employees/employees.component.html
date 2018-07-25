@@ -2,6 +2,10 @@
   List of Employees
 </h2>
 
+<p>
+  <input [(ngModel)]="searchText" placeholder="Keyword search" />
+</p>
+
 <div class="detail-list has-border" *ngIf="employeeList else empty">
   <div class="detail-row header">
     <div class="detail-col">No.</div>
@@ -12,7 +16,7 @@
     <div class="detail-col">Registered Date</div>
     <div class="detail-col">Status</div>
   </div>
-  <div class="detail-row" *ngFor="let employee of employeeList; let i = index">
+  <div class="detail-row" *ngFor="let employee of employeeList | filterByName : searchText; let i = index">
     <div class="detail-col">{{i+1}}</div>
     <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
     <div class="detail-col">{{employee.age}}</div>

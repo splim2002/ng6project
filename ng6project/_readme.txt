@@ -182,4 +182,10 @@ Reference: http://www.projectcodify.com/angular-set-base-url-dynamically
 ==> ngFor
 Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 
+#(11.1.3) Filter (By using PIPES)
+
+==> Reference: 
+- https://codeburst.io/create-a-search-pipe-to-dynamically-filter-results-with-angular-4-21fd3a5bec5c
+- https://angular.io/guide/pipes
+
 ====================================================

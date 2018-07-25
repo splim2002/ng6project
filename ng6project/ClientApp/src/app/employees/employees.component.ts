@@ -2,6 +2,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../_services/data.service';
 
+//Pipe
+import { FilterByNamePipe } from '../filter-by-name.pipe';
+
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
@@ -23,9 +26,7 @@ export class EmployeesComponent implements OnInit {
         console.log('dataSvc.getEmployees ERROR!');
       });
   }
-
 }
-
 
 interface Employee {
   userId: number;
