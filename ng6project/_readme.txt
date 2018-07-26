@@ -229,4 +229,9 @@ Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 #(11.1.6.2) Add department dropdown list
 Reference => https://blog.kevinchisholm.com/angular/get-value-selected-dropdown-menu-item/
 
+#(11.1.6.3) Add department filter
+- We have 2 methods, first, amend the FilterByNamePipe to add the department filtering. But actually it's not a good idea to do filtering by using PIPE bcz performance is poor & to prevent aggressive minification. Angular recommends to move filter & sorting to component.
+- I keep the 'filterByName : searchText' in [employees.component.html] and you can see it works with department filtering. But you may notice that the total result (in line 17) reflects the total count of department filtering only. I'm going to move FilterByNamePipe to component.
+
+
 ====================================================

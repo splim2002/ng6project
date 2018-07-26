@@ -15,20 +15,32 @@ import { SortingEmployeesPipe } from '../_pipe/sorting-employees.pipe';
 
 export class EmployeesComponent implements OnInit {
 
-  public employeeList: Employee[];
+  employeeList: Employee[];
+  filteredEmployeeList: Employee[] = [];
+  //Department
+  departmentList: Department[] = [];
+  //Sorting
   public sortKey: string = 'name.first';
   public sortPath: string[] = this.sortKey.split('.');
   public reverse: boolean = false;
 
-  public departmentList: Department[] = [];
-  public selDepartmentId: number = 0;
+  //Filter Property (get/set)
+  private _selDepartmentId: number = 0;
+  get selDepartmentId(): number {
+    return this._selDepartmentId;
+  }
+  set selDepartmentId(value: number) {
+    this._selDepartmentId = value;
+    this.filteredEmployeeList = this.performFilter();
+  }
 
-  constructor(private dataSvc: DataService) { }
+  constructor(private dataSvc: DataService) {}
 
   ngOnInit() {
     this.dataSvc.getEmployees()
       .subscribe(result => {
         this.employeeList = result.employees;
+        this.filteredEmployeeList = this.performFilter();
       }, err => {
         console.log('dataSvc.getEmployees ERROR!');
       });
@@ -60,8 +72,17 @@ export class EmployeesComponent implements OnInit {
     return null;
   }
 
-  addDepartmentFilter(sel_department: number) {
+  updateDepartmentFilter(sel_department: number) {
     this.selDepartmentId = sel_department;
+  }
+
+  performFilter(): Employee[] {
+    if (this.selDepartmentId == 0) {
+      return this.employeeList;
+    }
+    return this.employeeList.filter((item: Employee) => {
+      return item.departmentId === this.selDepartmentId
+    });
   }
 
 }

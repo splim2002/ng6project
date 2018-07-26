@@ -7,13 +7,14 @@
     <input [(ngModel)]="searchText" placeholder="Keyword search" />
   </div>
   <div class="col-6 text-right">
-    <select [ngModel]="selDepartmentId" (ngModelChange)="addDepartmentFilter($event)">
+    <select [ngModel]="selDepartmentId" (ngModelChange)="updateDepartmentFilter($event)">
       <option value="0">-Filter by department-</option>
       <option *ngFor="let opt of departmentList" [ngValue]="opt.departmentId">{{opt.departmentName}}</option>
     </select>
   </div>
 </div>
 
+<p>Total result: {{filteredEmployeeList.length}}</p>
 
 <div class="detail-list has-border" *ngIf="employeeList else empty">
   <div class="detail-row header">
@@ -50,7 +51,7 @@
       <i class="fas fa-sort" *ngIf="sortKey!='isAccountActive'"></i>
     </div>
   </div>
-  <div class="detail-row" *ngFor="let employee of employeeList | sortingEmployees: sortPath : reverse | filterByName : searchText; let i = index;">
+  <div class="detail-row" *ngFor="let employee of filteredEmployeeList | sortingEmployees: sortPath : reverse | filterByName : searchText; let i = index;">
     <div class="detail-col">{{i+1}}</div>
     <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
     <div class="detail-col">{{employee.age}}</div>
