@@ -11,7 +11,7 @@ export class SortingEmployeesPipe implements PipeTransform {
     // Check if is not null
     if (!items || !path ) return items;
 
-    return items.sort((a: Employee, b: Employee) => {
+    return [...items].sort((a: Employee, b: Employee) => {
       // We go for each property followed by path
       path.forEach(property => {
         a = a[property];
