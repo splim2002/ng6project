@@ -200,6 +200,14 @@ Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 - https://stackoverflow.com/questions/49107215/how-to-sort-array-of-objects-in-descending-order-in-angular 
 - https://blog.xmltravelgate.com/sorting-with-pipes-in-angular-2-7370b0839468
 
+#(11.1.4.2) Custom Pipe for 'Employee' to sort by Firstname (multi-layer JSON data)
+- Create SortingEmployeesPipe to create custom sorting for Employee.  
+	>ng g pipe sortingEmployees
+- Refer to image wwwroot/tutorial/011.1.4.2.png - sort by FirstName
+- Create folder src/app/_pipe to store all the custom Pipes
+- NOTE: This is incomplete demo. You will find the sorting is not working when apply filtering. Solution is in next commit.
+
+
 #(11.1.5) PIPE (such as currencyPipe, lowercase/uppercase)
 - Add salary column
 - Use currency pipe

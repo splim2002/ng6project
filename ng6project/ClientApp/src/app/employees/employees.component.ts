@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { DataService } from '../_services/data.service';
 
 //Pipe
-import { FilterByNamePipe } from '../filter-by-name.pipe';
-import { OrderByPipe } from '../order-by.pipe';
+import { FilterByNamePipe } from '../_pipe/filter-by-name.pipe';
+import { OrderByPipe } from '../_pipe/order-by.pipe';
+import { } from '../_pipe/sorting-employees.pipe';
 
 @Component({
   selector: 'app-employees',
@@ -15,7 +16,8 @@ import { OrderByPipe } from '../order-by.pipe';
 export class EmployeesComponent implements OnInit {
 
   public employeeList: Employee[];
-  public sortKey: string = 'nationality';
+  public sortKey: string = 'name.first';
+  public sortPath: string[] = this.sortKey.split('.');
   public reverse: boolean = false;
 
   constructor(private dataSvc: DataService) { }
@@ -30,18 +32,19 @@ export class EmployeesComponent implements OnInit {
       });
   }
 
-  sortby(selected_sort) {
+  sortby(selected_sort: string) {
     if (this.sortKey == selected_sort) {
       this.reverse = !this.reverse;
     } else {
-      this.sortKey = selected_sort;
+      this.sortKey = selected_sort; //to sort in string for checking purpose
+      this.sortPath = selected_sort.split('.');
       this.reverse = false;
     }
   }
 
 }
 
-interface Employee {
+export interface Employee {
   userId: number;
   name: EmployeeName;
   age: number;
@@ -52,7 +55,7 @@ interface Employee {
   isAccountActive: boolean;
 }
 
-interface EmployeeName {
+export interface EmployeeName {
   first: string;
   last: string;
 }
