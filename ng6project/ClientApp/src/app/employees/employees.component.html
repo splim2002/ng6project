@@ -2,9 +2,18 @@
   List of Employees
 </h2>
 
-<p>
-  <input [(ngModel)]="searchText" placeholder="Keyword search" />
-</p>
+<div class="row">
+  <div class="col-6">
+    <input [(ngModel)]="searchText" placeholder="Keyword search" />
+  </div>
+  <div class="col-6 text-right">
+    <select [ngModel]="selDepartmentId" (ngModelChange)="addDepartmentFilter($event)">
+      <option value="0">-Filter by department-</option>
+      <option *ngFor="let opt of departmentList" [ngValue]="opt.departmentId">{{opt.departmentName}}</option>
+    </select>
+  </div>
+</div>
+
 
 <div class="detail-list has-border" *ngIf="employeeList else empty">
   <div class="detail-row header">

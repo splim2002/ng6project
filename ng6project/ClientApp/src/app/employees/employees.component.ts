@@ -21,6 +21,7 @@ export class EmployeesComponent implements OnInit {
   public reverse: boolean = false;
 
   public departmentList: Department[] = [];
+  public selDepartmentId: number = 0;
 
   constructor(private dataSvc: DataService) { }
 
@@ -57,6 +58,10 @@ export class EmployeesComponent implements OnInit {
       return sel_department.departmentName;
     }
     return null;
+  }
+
+  addDepartmentFilter(sel_department: number) {
+    this.selDepartmentId = sel_department;
   }
 
 }
