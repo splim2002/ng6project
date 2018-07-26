@@ -5,7 +5,7 @@ import { DataService } from '../_services/data.service';
 //Pipe
 import { FilterByNamePipe } from '../_pipe/filter-by-name.pipe';
 import { OrderByPipe } from '../_pipe/order-by.pipe';
-import { } from '../_pipe/sorting-employees.pipe';
+import { SortingEmployeesPipe } from '../_pipe/sorting-employees.pipe';
 
 @Component({
   selector: 'app-employees',
@@ -20,15 +20,24 @@ export class EmployeesComponent implements OnInit {
   public sortPath: string[] = this.sortKey.split('.');
   public reverse: boolean = false;
 
+  public departmentList: Department[] = [];
+
   constructor(private dataSvc: DataService) { }
 
   ngOnInit() {
     this.dataSvc.getEmployees()
       .subscribe(result => {
-        console.log('dataSvc.getEmployees',result);
         this.employeeList = result.employees;
       }, err => {
         console.log('dataSvc.getEmployees ERROR!');
+      });
+
+    //Prepare department list
+    this.dataSvc.getDepartments()
+      .subscribe(result => {
+        this.departmentList = result.departments;
+      }, err => {
+        console.log('dataSvc.getDepartments ERROR!');
       });
   }
 
@@ -40,6 +49,14 @@ export class EmployeesComponent implements OnInit {
       this.sortPath = selected_sort.split('.');
       this.reverse = false;
     }
+  }
+
+  getDepartmentName(id: number) {
+    let sel_department = this.departmentList.find(item => item.departmentId === id);
+    if (sel_department) {
+      return sel_department.departmentName;
+    }
+    return null;
   }
 
 }
@@ -58,4 +75,9 @@ export interface Employee {
 export interface EmployeeName {
   first: string;
   last: string;
+}
+
+interface Department {
+  departmentId: number;
+  departmentName: string;
 }

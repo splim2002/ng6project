@@ -45,7 +45,7 @@
     <div class="detail-col">{{i+1}}</div>
     <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
     <div class="detail-col">{{employee.age}}</div>
-    <div class="detail-col">{{employee.departmentId}}</div>
+    <div class="detail-col">{{getDepartmentName(employee.departmentId)}}</div>
     <div class="detail-col">{{employee.nationality}}</div>
     <div class="detail-col text-right">{{employee.salary | currency:'USD':'symbol':'1.2-2' }}</div>
     <div class="detail-col">{{employee.registeredDate | date: 'dd-MMM-yy'}}</div>

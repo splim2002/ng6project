@@ -2,23 +2,23 @@
   "departments": [
     {
       "departmentId": 1,
-      "department": "HR"
+      "departmentName": "HR"
     },
     {
       "departmentId": 2,
-      "department": "Finance"
+      "departmentName": "Finance"
     },
     {
       "departmentId": 3,
-      "department": "IT"
+      "departmentName": "IT"
     },
     {
       "departmentId": 4,
-      "department": "Marketing"
+      "departmentName": "Marketing"
     },
     {
       "departmentId": 5,
-      "department": "Sales"
+      "departmentName": "Sales"
     }
   ]
 }

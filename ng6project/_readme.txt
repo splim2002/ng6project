@@ -218,4 +218,11 @@ Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 ==> Reference:
 - CurrencyPipe: https://angular.io/api/common/CurrencyPipe
 - DatePipe: https://angular.io/api/common/DatePipe 
+
+
+#(11.1.6) Display Department Name - Bind data from another json data
+- use HttpClient to get json data @[ng6project/ClientApp/src/app/_services/data.service.ts]
+- add interface EmployeeName
+- add method getDepartmentName()
+
 ====================================================
