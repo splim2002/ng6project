@@ -197,5 +197,14 @@ Reference: https://coryrylan.com/blog/angular-ng-for-syntax
 ==> Reference:
 - https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
 - https://stackoverflow.com/questions/36816788/how-do-i-call-an-angular-2-pipe-with-multiple-arguments
+- https://stackoverflow.com/questions/49107215/how-to-sort-array-of-objects-in-descending-order-in-angular 
+- https://blog.xmltravelgate.com/sorting-with-pipes-in-angular-2-7370b0839468
 
+#(11.1.5) PIPE (such as currencyPipe, lowercase/uppercase)
+- Add salary column
+- Use currency pipe
+
+==> Reference:
+- CurrencyPipe: https://angular.io/api/common/CurrencyPipe
+- DatePipe: https://angular.io/api/common/DatePipe 
 ====================================================

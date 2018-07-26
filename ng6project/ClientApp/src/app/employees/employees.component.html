@@ -6,7 +6,6 @@
   <input [(ngModel)]="searchText" placeholder="Keyword search" />
 </p>
 
-
 <div class="detail-list has-border" *ngIf="employeeList else empty">
   <div class="detail-row header">
     <div class="detail-col">No.</div>
@@ -24,6 +23,11 @@
       <i class="fas" *ngIf="sortKey=='nationality'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
       <i class="fas fa-sort" *ngIf="sortKey!='nationality'"></i>
     </div>
+    <div class="detail-col" (click)="sortby('salary')">
+      Salary
+      <i class="fas" *ngIf="sortKey=='salary'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
+      <i class="fas fa-sort" *ngIf="sortKey!='salary'"></i>
+    </div>
     <div class="detail-col" (click)="sortby('registeredDate')">
       Registered Date
       <i class="fas" *ngIf="sortKey=='registeredDate'" [ngClass]="{'fa-sort-up':reverse,'fa-sort-down':!reverse}"></i>
@@ -35,14 +39,15 @@
       <i class="fas fa-sort" *ngIf="sortKey!='isAccountActive'"></i>
     </div>
   </div>
-  <div class="detail-row" *ngFor="let employee of employeeList | orderBy: sortKey : reverse | filterByName : searchText; let i = index">
+  <div class="detail-row" *ngFor="let employee of employeeList | orderBy: sortKey : reverse | filterByName : searchText; let i = index;">
     <div class="detail-col">{{i+1}}</div>
     <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
     <div class="detail-col">{{employee.age}}</div>
     <div class="detail-col">{{employee.departmentId}}</div>
     <div class="detail-col">{{employee.nationality}}</div>
+    <div class="detail-col text-right">{{employee.salary | currency:'USD':'symbol':'1.2-2' }}</div>
     <div class="detail-col">{{employee.registeredDate | date: 'dd-MMM-yy'}}</div>
-    <div class="detail-col">{{employee.isAccountActive? 'Yes':'No'}}</div>
+    <div class="detail-col">{{(employee.isAccountActive? 'Yes':'No') | uppercase }}</div>
   </div>
 </div>
 

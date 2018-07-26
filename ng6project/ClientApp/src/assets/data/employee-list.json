@@ -11,6 +11,7 @@
       "phone": "+1 (835) 505-2774",
       "nationality": "Gibraltar",
       "registeredDate": "2018-03-29 05:40:05",
+      "salary" :  50020.00,
       "isAccountActive": true
     },
     {
@@ -24,6 +25,7 @@
       "phone": "+1 (824) 476-3833",
       "nationality": "Liechtenstein",
       "registeredDate": "2014-09-03 04:46:00",
+      "salary": 91210.00,
       "isAccountActive": false
     },
     {
@@ -37,6 +39,7 @@
       "phone": "+1 (931) 484-2183",
       "nationality": "Sudan",
       "registeredDate": "2016-11-29 11:33:05",
+      "salary": 43021.00,
       "isAccountActive": false
     },
     {
@@ -50,6 +53,7 @@
       "phone": "+1 (935) 540-3953",
       "nationality": "Mali",
       "registeredDate": "2015-08-26 20:48:23",
+      "salary": 68420.00,
       "isAccountActive": false
     },
     {
@@ -63,6 +67,7 @@
       "phone": "+1 (809) 485-2526",
       "nationality": "Bermuda",
       "registeredDate": "2016-01-21 18:35:56",
+      "salary": 112342.60,
       "isAccountActive": false
     },
     {
@@ -76,6 +81,7 @@
       "phone": "+1 (960) 420-2824",
       "nationality": "Singapore",
       "registeredDate": "2017-03-28 23:07:48",
+      "salary": 87345.00,
       "isAccountActive": true
     },
     {
@@ -89,6 +95,7 @@
       "phone": "+1 (805) 526-2958",
       "nationality": "Turks and Caicos Islands",
       "registeredDate": "2016-05-30 13:05:53",
+      "salary": 91313.00,
       "isAccountActive": false
     },
     {
@@ -102,6 +109,7 @@
       "phone": "+1 (884) 540-2925",
       "nationality": "Puerto Rico",
       "registeredDate": "2016-06-25 18:58:23",
+      "salary": 31253.00,
       "isAccountActive": false
     },
     {
@@ -115,6 +123,7 @@
       "phone": "+1 (946) 491-3258",
       "nationality": "Virgin Islands (US)",
       "registeredDate": "2015-08-07 00:43:44",
+      "salary": 23255.00,
       "isAccountActive": true
     },
     {
@@ -128,6 +137,7 @@
       "phone": "+1 (993) 513-2270",
       "nationality": "Chad",
       "registeredDate": "2017-02-17 13:21:15",
+      "salary": 76333.00,
       "isAccountActive": false
     },
     {
@@ -141,6 +151,7 @@
       "phone": "+1 (979) 558-2300",
       "nationality": "Zambia",
       "registeredDate": "2015-11-07 15:51:50",
+      "salary": 74432.00,
       "isAccountActive": false
     },
     {
@@ -154,6 +165,7 @@
       "phone": "+1 (950) 557-2109",
       "nationality": "Martinique",
       "registeredDate": "2014-03-09 19:22:40",
+      "salary": 74323.00,
       "isAccountActive": false
     },
     {
@@ -167,6 +179,7 @@
       "phone": "+1 (829) 500-2496",
       "nationality": "Russian Federation",
       "registeredDate": "2016-04-15 19:52:59",
+      "salary": 85433.00,
       "isAccountActive": false
     },
     {
@@ -180,6 +193,7 @@
       "phone": "+1 (810) 508-3932",
       "nationality": "Thailand",
       "registeredDate": "2017-08-06 06:38:04",
+      "salary": 99753.00,
       "isAccountActive": true
     },
     {
@@ -193,6 +207,7 @@
       "phone": "+1 (902) 573-3954",
       "nationality": "Spain",
       "registeredDate": "2015-09-06 03:10:25",
+      "salary": 88524.00,
       "isAccountActive": true
     },
     {
@@ -206,6 +221,7 @@
       "phone": "+1 (834) 550-3230",
       "nationality": "Mauritius",
       "registeredDate": "2018-05-17 10:05:26",
+      "salary": 67664.00,
       "isAccountActive": true
     },
     {
@@ -219,6 +235,7 @@
       "phone": "+1 (835) 532-3038",
       "nationality": "Papua New Guinea",
       "registeredDate": "2016-05-14 06:25:35",
+      "salary": 76345.00,
       "isAccountActive": false
     },
     {
@@ -232,6 +249,7 @@
       "phone": "+1 (977) 510-3859",
       "nationality": "Antarctica",
       "registeredDate": "2016-01-15 19:42:25",
+      "salary": 51095.00,
       "isAccountActive": false
     },
     {
@@ -245,6 +263,7 @@
       "phone": "+1 (974) 520-2382",
       "nationality": "Uganda",
       "registeredDate": "2017-08-24 19:19:34",
+      "salary": 75245.00,
       "isAccountActive": true
     },
     {
@@ -258,6 +277,7 @@
       "phone": "+1 (845) 494-2802",
       "nationality": "Ethiopia",
       "registeredDate": "2014-12-04 10:41:41",
+      "salary": 77647.00,
       "isAccountActive": true
     }
   ]
