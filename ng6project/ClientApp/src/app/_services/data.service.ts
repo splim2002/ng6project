@@ -3,6 +3,8 @@ import { Observable } from "rxjs";
 import { Injectable, Inject } from '@angular/core';
 import 'rxjs/add/operator/map';
 
+import { Employee } from '../employees/employees.component';
+
 @Injectable()
 //@Injectable({
 //  providedIn: 'root'
@@ -34,11 +36,15 @@ export class DataService {
   }
 
   //Employee Data
-  getEmployees(): Observable<any> {
+  getEmployees(): any {
     return this.http.get(this.baseUrl + 'assets/data/employee-list.json');
   }
-  getDepartments(): Observable<any> {
+  getDepartments(): any {
     return this.http.get(this.baseUrl + 'assets/data/employee-department.json');
   }
 
+  getEmployeesType2(): Observable<Employee[]> {
+    return this.http
+      .get<Employee[]>(this.baseUrl + 'assets/data/employee-list-type2.json');
+  }
 }

@@ -1,3 +1,27 @@
-<p>
-  employees-type2 works!
-</p>
+<h2>
+  List of Employees (Observable + Async pipe)
+</h2>
+
+<div class="detail-list has-border" *ngIf="employeesObservable$ else empty">
+  <div class="detail-row header">
+    <div class="detail-col">No.</div>
+    <div class="detail-col">Name</div>
+    <div class="detail-col">Age</div>
+    <div class="detail-col">Nationality</div>
+    <div class="detail-col">Salary</div>
+    <div class="detail-col">Registered Date</div>
+    <div class="detail-col">Status</div>
+  </div>
+  <div class="detail-row" *ngFor="let employee of employeesObservable$ | async; let i = index; ">
+    <div class="detail-col">{{i+1}}</div>
+    <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
+    <div class="detail-col">{{employee.age}}</div>
+    <div class="detail-col">{{employee.departmentId}}</div>
+    <div class="detail-col">{{employee.nationality}}</div>
+    <div class="detail-col text-right">{{employee.salary | currency:'USD':'symbol':'1.2-2' }}</div>
+    <div class="detail-col">{{employee.registeredDate | date: 'dd-MMM-yy'}}</div>
+    <div class="detail-col">{{(employee.isAccountActive? 'Yes':'No') | uppercase }}</div>
+  </div>
+</div>
+
+<ng-template #empty> No Employees </ng-template>

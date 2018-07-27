@@ -262,6 +262,14 @@ Reference ==>
 - Create new component "EmployeesType2"
 	> ng g c employeesType2
 
+#(11.2.1) Use Observable method to load JSON data
+- Add new json data @[ng6project/ClientApp/src/assets/data/employee-list-type2.json]. 
+	- Note: structure is different. Remove attribute 'employees'
+- Add method 'getEmployeesType2()' to DataService @[ng6project/ClientApp/src/app/_services/data.service.ts]
+
+Reference ==> 
+- http://javasampleapproach.com/frontend/angular/angular-6/angular-6-service-with-observable-data-for-asynchronous-operation
+- https://auth0.com/blog/making-use-of-rxjs-angular/
 
 
 ====================================================
