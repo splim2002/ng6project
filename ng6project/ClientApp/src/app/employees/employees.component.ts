@@ -20,17 +20,27 @@ export class EmployeesComponent implements OnInit {
   //Department
   departmentList: Department[] = [];
   //Sorting
-  public sortKey: string = 'name.first';
-  public sortPath: string[] = this.sortKey.split('.');
-  public reverse: boolean = false;
+  sortKey: string = 'name.first';
+  sortPath: string[] = this.sortKey.split('.');
+  reverse: boolean = false;
 
-  //Filter Property (get/set)
+  //Filter Property (get/set): Department Id
   private _selDepartmentId: number = 0;
   get selDepartmentId(): number {
     return this._selDepartmentId;
   }
   set selDepartmentId(value: number) {
     this._selDepartmentId = value;
+    this.filteredEmployeeList = this.performFilter();
+  }
+
+  //Filter Property (get/set): Search Keyword
+  private _searchKeyword: string;
+  get searchKeyword(): string {
+    return this._searchKeyword;
+  }
+  set searchKeyword(value: string) {
+    this._searchKeyword = value;
     this.filteredEmployeeList = this.performFilter();
   }
 
@@ -76,13 +86,31 @@ export class EmployeesComponent implements OnInit {
     this.selDepartmentId = sel_department;
   }
 
+  clearKeyword() {
+    this.searchKeyword = null;
+  }
+
   performFilter(): Employee[] {
-    if (this.selDepartmentId == 0) {
+    if (this.selDepartmentId == 0 && !this.searchKeyword) {
       return this.employeeList;
     }
-    return this.employeeList.filter((item: Employee) => {
-      return item.departmentId === this.selDepartmentId
-    });
+
+    let tempVar: Employee[] = this.employeeList;
+    if (this.selDepartmentId > 0) {
+      tempVar = tempVar.filter((item: Employee) => item.departmentId === this.selDepartmentId);
+    }
+    if (this.searchKeyword) {
+      let tempKeyword: string = this.searchKeyword.toLocaleLowerCase();
+      tempVar = tempVar.filter((item: Employee) =>
+        (
+          item.name.first.toLocaleLowerCase().includes(this.searchKeyword) ||
+          item.name.last.toLocaleLowerCase().includes(this.searchKeyword) ||
+          item.nationality.toLocaleLowerCase().includes(this.searchKeyword) ||
+          item.age.toString().toLocaleLowerCase().includes(this.searchKeyword)
+        )
+      );
+    }
+    return tempVar;
   }
 
 }

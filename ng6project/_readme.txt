@@ -233,5 +233,17 @@ Reference => https://blog.kevinchisholm.com/angular/get-value-selected-dropdown-
 - We have 2 methods, first, amend the FilterByNamePipe to add the department filtering. But actually it's not a good idea to do filtering by using PIPE bcz performance is poor & to prevent aggressive minification. Angular recommends to move filter & sorting to component.
 - I keep the 'filterByName : searchText' in [employees.component.html] and you can see it works with department filtering. But you may notice that the total result (in line 17) reflects the total count of department filtering only. I'm going to move FilterByNamePipe to component.
 
+#(11.1.6.4) Move keyword filter to component, stop using FilterByNamePipe
+- Change to use 'searchKeyword' & create property accordingly. @[ng6project/ClientApp/src/app/employees/employees.component.ts]
+- Update 'performFilter' method
+- Keyword search applies to FirstName, Lastname, Nationality & Age. 
+	- Note: Need to convert age which is 'number' to string as the searchKeyword is 'String' type.
+- Use 'toLocaleLowerCase()' to prevent case sensitive upon keyword search
+- Total result reflects correctly at keyword & department filtering. Display 'No employees' when result is empty.
+- Add 'Clear search' button and 'clearKeyword' method
+- Beautify form layout
+
+Noted: What is toLocaleLowerCase() and why:
+--> The toLocaleLowerCase() method returns the value of the string converted to lower case according to any locale-specific case mappings. toLocaleLowerCase() does not affect the value of the string itself. In most cases, this will produce the same result as toLowerCase(), but for some locales, such as Turkish, whose case mappings do not follow the default case mappings in Unicode, there may be a different result.
 
 ====================================================
