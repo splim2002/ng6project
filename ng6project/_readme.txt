@@ -246,4 +246,14 @@ Reference => https://blog.kevinchisholm.com/angular/get-value-selected-dropdown-
 Noted: What is toLocaleLowerCase() and why:
 --> The toLocaleLowerCase() method returns the value of the string converted to lower case according to any locale-specific case mappings. toLocaleLowerCase() does not affect the value of the string itself. In most cases, this will produce the same result as toLowerCase(), but for some locales, such as Turkish, whose case mappings do not follow the default case mappings in Unicode, there may be a different result.
 
+#(11.1.6.5) [(ngModel)] and (ngModelChange)="updateDepartmentFilter($event)"
+- Do you know ngModel can trigger the changes without 'ngModelChange'? Yes, use () will do.
+- Change [ngModel] to [(ngModel)] and remove (ngModelChange)="updateDepartmentFilter($event)"
+
+TIPS:
+[] => Push data from component into form
+() => Form itself can callback into component
+Reference ==> 
+- https://angular.io/guide/template-syntax#two-way-binding---
+- https://angular.io/guide/template-syntax#ngmodel---two-way-binding-to-form-elements-with-ngmodel
 ====================================================

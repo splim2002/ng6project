@@ -82,9 +82,9 @@ export class EmployeesComponent implements OnInit {
     return null;
   }
 
-  updateDepartmentFilter(sel_department: number) {
-    this.selDepartmentId = sel_department;
-  }
+  //updateDepartmentFilter(sel_department: number) {
+  //  this.selDepartmentId = sel_department;
+  //}
 
   clearKeyword() {
     this.searchKeyword = null;

@@ -10,7 +10,8 @@
     </div>
   </div>
   <div class="col-12 col-sm-6 form-group">
-    <select [ngModel]="selDepartmentId" (ngModelChange)="updateDepartmentFilter($event)" class="form-control">
+    <!--<select [ngModel]="selDepartmentId" (ngModelChange)="updateDepartmentFilter($event)" class="form-control">-->
+    <select [(ngModel)]="selDepartmentId" class="form-control">
       <option value="0">All Departments</option>
       <option *ngFor="let opt of departmentList" [ngValue]="opt.departmentId">{{opt.departmentName}}</option>
     </select>
