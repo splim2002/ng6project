@@ -15,7 +15,7 @@ export class EmployeesType2Component implements OnInit {
   constructor(private dataSvc: DataService) { }
 
   ngOnInit() {
-    this.employeesObservable$ = this.dataSvc.getEmployeesType2();
+    this.employeesObservable$ = this.dataSvc.getAllEmployees();
   }
 
 }

@@ -271,5 +271,11 @@ Reference ==>
 - http://javasampleapproach.com/frontend/angular/angular-6/angular-6-service-with-observable-data-for-asynchronous-operation
 - https://auth0.com/blog/making-use-of-rxjs-angular/
 
+#(11.2.1.2) How to get employees data only if JSON data structure is like employee-list.json @[ng6project/ClientApp/src/assets/data/employee-list.json]
+- Use 'Map'!
+Reference => 
+- https://stackoverflow.com/questions/40100530/angular-2-how-to-use-observable-filter
+- https://www.reddit.com/r/Angular2/comments/7gmegs/angular_5_httpclient_the_pipe_method/ 
+- https://blog.angularindepth.com/rxjs-understanding-lettable-operators-fe74dda186d3
 
 ====================================================

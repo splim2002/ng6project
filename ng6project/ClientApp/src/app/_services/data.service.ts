@@ -47,4 +47,11 @@ export class DataService {
     return this.http
       .get<Employee[]>(this.baseUrl + 'assets/data/employee-list-type2.json');
   }
+
+  getAllEmployees(): Observable<Employee[]> {
+    return this.http
+      .get<Employee[]>(this.baseUrl + 'assets/data/employee-list.json')
+      .map((res: any) => res.employees);
+  }
+
 }
