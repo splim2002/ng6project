@@ -16,6 +16,7 @@ import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { EmployeesType2Component } from './employees-type2/employees-type2.component';
 
 const appRoutes: Routes = [
   //Site routes goes here 
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'employee-list', component: EmployeesComponent }
+      { path: 'employee-list', component: EmployeesComponent },
+      { path: 'employee-list-2', component: EmployeesType2Component }
     ]
   },
   {

@@ -256,4 +256,12 @@ TIPS:
 Reference ==> 
 - https://angular.io/guide/template-syntax#two-way-binding---
 - https://angular.io/guide/template-syntax#ngmodel---two-way-binding-to-form-elements-with-ngmodel
+
+
+#(11.2) Use Observable & Async
+- Create new component "EmployeesType2"
+	> ng g c employeesType2
+
+
+
 ====================================================

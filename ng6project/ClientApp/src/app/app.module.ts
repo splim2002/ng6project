@@ -29,6 +29,7 @@ import { ProductComponent } from './product/product.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { EmployeesType2Component } from './employees-type2/employees-type2.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EmployeesComponent } from './employees/employees.component';
     EmployeesComponent,
     FilterByNamePipe,
     OrderByPipe,
-    SortingEmployeesPipe
+    SortingEmployeesPipe,
+    EmployeesType2Component
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
