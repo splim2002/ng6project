@@ -292,4 +292,7 @@ Reference =>
 
 Reference => https://stackoverflow.com/questions/50275834/how-do-you-sort-an-observableitem-in-angular-6-with-rxjs-6
 
+#(11.2.4) Total Observable Data Count
+Reference => https://stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array
+
 ====================================================
