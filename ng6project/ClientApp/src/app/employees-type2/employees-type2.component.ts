@@ -43,13 +43,8 @@ export class EmployeesType2Component implements OnInit {
   ngOnInit() {
     //Get router param
     this.activatedRoute.queryParams.subscribe((qParams: Params) => {
-      //console.log('activatedRoute.queryParams');
-      if (qParams['kw']) {
-        this.searchKeyword = qParams['kw'];
-      }
-      if (qParams['dp']) {
-        this.selDepartmentId = parseInt(qParams['dp']);
-      }
+      this.searchKeyword = (qParams['kw']) ? qParams['kw'] : null;
+      this.selDepartmentId = (qParams['dp']) ? parseInt(qParams['dp']) : 0;
       //sorting
       //if (qParams['sk']) { 
       //  this.sortKey = qParams['sk'];

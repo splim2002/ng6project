@@ -309,4 +309,6 @@ Reference =>
 - https://alligator.io/angular/query-parameters/
 - https://angular.io/api/router/ActivatedRoute
 
+#(11.3.1) Fixed browser back button issue when URL has no params
+
 ====================================================
