@@ -19,7 +19,7 @@
 
 <p>Total result: {{(employeesObservable$ | async)?.length}}</p>
 
-<div class="detail-list has-border" *ngIf="employeesObservable$ else empty">
+<div class="detail-list has-border" *ngIf="(employeesObservable$ | async)?.length>0 else empty">
   <div class="detail-row header">
     <div class="detail-col">No.</div>
     <div class="detail-col" (click)="sortby('name.first')">

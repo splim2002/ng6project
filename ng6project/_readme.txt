@@ -295,4 +295,5 @@ Reference => https://stackoverflow.com/questions/50275834/how-do-you-sort-an-obs
 #(11.2.4) Total Observable Data Count
 Reference => https://stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array
 
+- Show 'No employees' when no data match
 ====================================================
