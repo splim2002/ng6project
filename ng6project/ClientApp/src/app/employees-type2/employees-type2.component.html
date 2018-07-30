@@ -2,11 +2,27 @@
   List of Employees (Observable + Async pipe)
 </h2>
 
+<div class="row">
+  <div class="col-12 col-sm-6 form-group input-group">
+    <input class="form-control" [(ngModel)]="searchKeyword" placeholder="Keyword search" />
+    <div class="input-group-append">
+      <button type="button" class="btn btn-sm btn-info" *ngIf="searchKeyword" (click)="clearKeyword()">Clear Search</button>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 form-group">
+    <select [(ngModel)]="selDepartmentId" class="form-control">
+      <option value="0">All Departments</option>
+      <option *ngFor="let opt of departmentList" [ngValue]="opt.departmentId">{{opt.departmentName}}</option>
+    </select>
+  </div>
+</div>
+
 <div class="detail-list has-border" *ngIf="employeesObservable$ else empty">
   <div class="detail-row header">
     <div class="detail-col">No.</div>
     <div class="detail-col">Name</div>
     <div class="detail-col">Age</div>
+    <div class="detail-col">Department</div>
     <div class="detail-col">Nationality</div>
     <div class="detail-col">Salary</div>
     <div class="detail-col">Registered Date</div>
@@ -16,7 +32,7 @@
     <div class="detail-col">{{i+1}}</div>
     <div class="detail-col">{{employee.name.first}}, {{employee.name.last}}</div>
     <div class="detail-col">{{employee.age}}</div>
-    <div class="detail-col">{{employee.departmentId}}</div>
+    <div class="detail-col">{{getDepartmentName(employee.departmentId)}}</div>
     <div class="detail-col">{{employee.nationality}}</div>
     <div class="detail-col text-right">{{employee.salary | currency:'USD':'symbol':'1.2-2' }}</div>
     <div class="detail-col">{{employee.registeredDate | date: 'dd-MMM-yy'}}</div>

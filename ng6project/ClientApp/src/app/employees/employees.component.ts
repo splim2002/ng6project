@@ -103,10 +103,10 @@ export class EmployeesComponent implements OnInit {
       let tempKeyword: string = this.searchKeyword.toLocaleLowerCase();
       tempVar = tempVar.filter((item: Employee) =>
         (
-          item.name.first.toLocaleLowerCase().includes(this.searchKeyword) ||
-          item.name.last.toLocaleLowerCase().includes(this.searchKeyword) ||
-          item.nationality.toLocaleLowerCase().includes(this.searchKeyword) ||
-          item.age.toString().toLocaleLowerCase().includes(this.searchKeyword)
+          item.name.first.toLocaleLowerCase().includes(tempKeyword) ||
+          item.name.last.toLocaleLowerCase().includes(tempKeyword) ||
+          item.nationality.toLocaleLowerCase().includes(tempKeyword) ||
+          item.age.toString().toLocaleLowerCase().includes(tempKeyword)
         )
       );
     }
@@ -131,7 +131,7 @@ export interface EmployeeName {
   last: string;
 }
 
-interface Department {
+export interface Department {
   departmentId: number;
   departmentName: string;
 }

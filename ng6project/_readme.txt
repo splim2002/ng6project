@@ -278,4 +278,10 @@ Reference =>
 - https://www.reddit.com/r/Angular2/comments/7gmegs/angular_5_httpclient_the_pipe_method/ 
 - https://blog.angularindepth.com/rxjs-understanding-lettable-operators-fe74dda186d3
 
+#(11.2.2) Add filtering to observable data
+- Apply filtering (case sensitive) by using map & filter @[ng6project/ClientApp/src/app/_services/data.service.ts]
+- Add methods: clearKeyword(), getDepartmentName() to EmployeesType2Component
+Reference => 
+- https://stackoverflow.com/questions/43430715/angular-filter-observable-array/43430835
+
 ====================================================

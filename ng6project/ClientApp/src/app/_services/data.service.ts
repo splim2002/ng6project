@@ -2,8 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Injectable, Inject } from '@angular/core';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
 
-import { Employee } from '../employees/employees.component';
+import { Employee, Department } from '../employees/employees.component';
 
 @Injectable()
 //@Injectable({
@@ -43,15 +44,39 @@ export class DataService {
     return this.http.get(this.baseUrl + 'assets/data/employee-department.json');
   }
 
+
+  /*
+   * Employee List (Type 2) - Using Observable
+   */
   getEmployeesType2(): Observable<Employee[]> {
     return this.http
       .get<Employee[]>(this.baseUrl + 'assets/data/employee-list-type2.json');
   }
-
-  getAllEmployees(): Observable<Employee[]> {
+  getAllEmployees(selDepartmentId: number, searchText: string): Observable<Employee[]> {
     return this.http
       .get<Employee[]>(this.baseUrl + 'assets/data/employee-list.json')
-      .map((res: any) => res.employees);
-  }
+      .map((res: any) => res.employees)
+      .map((resDatas: Employee[]) => {
+        if (selDepartmentId == 0 && !searchText) {
+          return resDatas;
+        }
 
+        let tempVar: Employee[] = resDatas;
+        if (selDepartmentId > 0) {
+          tempVar = tempVar.filter((item: Employee) => item.departmentId === selDepartmentId);
+        }
+        if (searchText) {
+          let tempKeyword: string = searchText.toLocaleLowerCase();
+          tempVar = tempVar.filter((item: Employee) =>
+            (
+              item.name.first.toLocaleLowerCase().includes(tempKeyword) ||
+              item.name.last.toLocaleLowerCase().includes(tempKeyword) ||
+              item.nationality.toLocaleLowerCase().includes(tempKeyword) ||
+              item.age.toString().toLocaleLowerCase().includes(tempKeyword)
+            )
+          );
+        }
+        return tempVar;
+      });
+  }
 }
