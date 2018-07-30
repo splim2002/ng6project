@@ -18,6 +18,7 @@ import { LayoutDefaultComponent } from './_shared/layout-default/layout-default.
 import { LayoutProfileComponent } from './_shared/layout-profile/layout-profile.component';
 import { SideMenuComponent } from './_shared/side-menu/side-menu.component';
 import { Error404Component } from './_shared/error404/error404.component';
+import { SortingStyle1Component } from './_shared/sorting-style1/sorting-style1.component';
 
 //Component (Main)
 import { AppComponent } from './app.component';
@@ -49,7 +50,8 @@ import { EmployeesType2Component } from './employees-type2/employees-type2.compo
     FilterByNamePipe,
     OrderByPipe,
     SortingEmployeesPipe,
-    EmployeesType2Component
+    EmployeesType2Component,
+    SortingStyle1Component
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

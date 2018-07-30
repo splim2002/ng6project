@@ -52,16 +52,16 @@ export class DataService {
     return this.http
       .get<Employee[]>(this.baseUrl + 'assets/data/employee-list-type2.json');
   }
-  getAllEmployees(selDepartmentId: number, searchText: string): Observable<Employee[]> {
+  getAllEmployees(selDepartmentId: number, searchText: string, sortPath: string[], isDesc: boolean): Observable<Employee[]> {
     return this.http
       .get<Employee[]>(this.baseUrl + 'assets/data/employee-list.json')
       .map((res: any) => res.employees)
-      .map((resDatas: Employee[]) => {
+      .map((results: Employee[]) => {
         if (selDepartmentId == 0 && !searchText) {
-          return resDatas;
+          return results;
         }
 
-        let tempVar: Employee[] = resDatas;
+        let tempVar: Employee[] = results;
         if (selDepartmentId > 0) {
           tempVar = tempVar.filter((item: Employee) => item.departmentId === selDepartmentId);
         }
@@ -77,6 +77,26 @@ export class DataService {
           );
         }
         return tempVar;
-      });
+      })
+      .map(results => results.sort(
+        (a: Employee, b: Employee) => {
+          // We go for each property followed by path
+          sortPath.forEach(property => {
+            a = a[property];
+            b = b[property];
+          })
+
+          let comparison = 0;
+          if (a > b) {
+            comparison = 1;
+          } else if (a < b) {
+            comparison = -1;
+          }
+
+          return isDesc ? (comparison * -1) : comparison;
+
+        }
+      ))
+      ;
   }
 }

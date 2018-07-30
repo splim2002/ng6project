@@ -20,7 +20,7 @@ export class EmployeesType2Component implements OnInit {
   }
   set selDepartmentId(value: number) {
     this._selDepartmentId = value;
-    this.employeesObservable$ = this.dataSvc.getAllEmployees(this._selDepartmentId, this.searchKeyword);
+    this.updateEmployeeList();
   }
   //Filter Property (get/set): Search Keyword
   private _searchKeyword: string = null;
@@ -29,14 +29,19 @@ export class EmployeesType2Component implements OnInit {
   }
   set searchKeyword(value: string) {
     this._searchKeyword = value;
-    this.employeesObservable$ = this.dataSvc.getAllEmployees(this.selDepartmentId, this._searchKeyword);
+    this.updateEmployeeList();
   }
+
+  //Sorting
+  private sortKey: string = 'name.first';
+  private sortPath: string[] = this.sortKey.split('.');
+  private reverse: boolean = false;
 
   constructor(private dataSvc: DataService) { }
 
   ngOnInit() {
     //Prepare Employee List
-    this.employeesObservable$ = this.dataSvc.getAllEmployees(this.selDepartmentId, this.searchKeyword);
+    this.updateEmployeeList();
     //Prepare Department list
     this.dataSvc.getDepartments()
       .subscribe(result => {
@@ -44,6 +49,10 @@ export class EmployeesType2Component implements OnInit {
       }, err => {
         console.log('dataSvc.getDepartments ERROR!');
       });
+  }
+
+  private updateEmployeeList() {
+    this.employeesObservable$ = this.dataSvc.getAllEmployees(this.selDepartmentId, this.searchKeyword, this.sortPath, this.reverse);
   }
 
   clearKeyword() {
@@ -56,6 +65,18 @@ export class EmployeesType2Component implements OnInit {
       return sel_department.departmentName;
     }
     return null;
+  }
+
+  sortby(selected_sort: string) {
+    if (this.sortKey == selected_sort) {
+      this.reverse = !this.reverse;
+    } else {
+      this.sortKey = selected_sort; //to sort in string for checking purpose
+      this.sortPath = selected_sort.split('.');
+      this.reverse = false;
+    }
+
+    this.updateEmployeeList();
   }
 
 }

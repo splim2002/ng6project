@@ -283,5 +283,13 @@ Reference =>
 - Add methods: clearKeyword(), getDepartmentName() to EmployeesType2Component
 Reference => 
 - https://stackoverflow.com/questions/43430715/angular-filter-observable-array/43430835
+- https://stackoverflow.com/questions/50769477/angular-6-filter-json
+
+#(11.2.3) Add sorting to observable data
+- Refer to SortingEmployeesPipe's sorting code
+- Create a shared component (directive) for sortable table header
+	>ng g c sortingStyle1
+
+Reference => https://stackoverflow.com/questions/50275834/how-do-you-sort-an-observableitem-in-angular-6-with-rxjs-6
 
 ====================================================

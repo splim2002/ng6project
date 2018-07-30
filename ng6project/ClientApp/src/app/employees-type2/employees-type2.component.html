@@ -20,13 +20,25 @@
 <div class="detail-list has-border" *ngIf="employeesObservable$ else empty">
   <div class="detail-row header">
     <div class="detail-col">No.</div>
-    <div class="detail-col">Name</div>
-    <div class="detail-col">Age</div>
+    <div class="detail-col" (click)="sortby('name.first')">
+      Name <app-sorting-style1 [isSortBy]="sortKey=='name.first'" [isInDesc]="reverse"></app-sorting-style1>
+    </div>
+    <div class="detail-col" (click)="sortby('age')">
+      Age <app-sorting-style1 [isSortBy]="sortKey=='age'" [isInDesc]="reverse"></app-sorting-style1>
+    </div>
     <div class="detail-col">Department</div>
-    <div class="detail-col">Nationality</div>
-    <div class="detail-col">Salary</div>
-    <div class="detail-col">Registered Date</div>
-    <div class="detail-col">Status</div>
+    <div class="detail-col" (click)="sortby('nationality')">
+      Nationality <app-sorting-style1 [isSortBy]="sortKey=='nationality'" [isInDesc]="reverse"></app-sorting-style1>
+    </div>
+    <div class="detail-col" (click)="sortby('salary')">
+      Salary <app-sorting-style1 [isSortBy]="sortKey=='salary'" [isInDesc]="reverse"></app-sorting-style1>
+    </div>
+    <div class="detail-col" (click)="sortby('registeredDate')">
+      Registered Date <app-sorting-style1 [isSortBy]="sortKey=='registeredDate'" [isInDesc]="reverse"></app-sorting-style1>
+    </div>
+    <div class="detail-col" (click)="sortby('isAccountActive')">
+      Status <app-sorting-style1 [isSortBy]="sortKey=='isAccountActive'" [isInDesc]="reverse"></app-sorting-style1>
+    </div>
   </div>
   <div class="detail-row" *ngFor="let employee of employeesObservable$ | async; let i = index; ">
     <div class="detail-col">{{i+1}}</div>
