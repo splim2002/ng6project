@@ -296,4 +296,17 @@ Reference => https://stackoverflow.com/questions/50275834/how-do-you-sort-an-obs
 Reference => https://stackoverflow.com/questions/38057537/how-to-check-the-length-of-an-observable-array
 
 - Show 'No employees' when no data match
+
+#(11.3) Pre-draw data by route param setting
+- use: import { Router, ActivatedRoute, Params } from '@angular/router';
+- 'Router' is used to update URL (=> use Router.navigate[...])
+- 'ActivatedRoute' is used to get the URL
+	- ActivatedRoute.queryParams....
+- 'Param' (is a collection of parameter) is used as property of queryParams. 
+
+Reference =>
+- https://stackoverflow.com/questions/35688084/how-get-query-params-from-url-in-angular2
+- https://alligator.io/angular/query-parameters/
+- https://angular.io/api/router/ActivatedRoute
+
 ====================================================

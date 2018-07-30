@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employee, EmployeeName, Department } from '../employees/employees.component';
 import { DataService } from '../_services/data.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-employees-type2',
@@ -37,11 +38,28 @@ export class EmployeesType2Component implements OnInit {
   private sortPath: string[] = this.sortKey.split('.');
   private reverse: boolean = false;
 
-  constructor(private dataSvc: DataService) { }
+  constructor(private dataSvc: DataService, private myRoute: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    //Prepare Employee List
-    this.updateEmployeeList();
+    //Get router param
+    this.activatedRoute.queryParams.subscribe((qParams: Params) => {
+      //console.log('activatedRoute.queryParams');
+      if (qParams['kw']) {
+        this.searchKeyword = qParams['kw'];
+      }
+      if (qParams['dp']) {
+        this.selDepartmentId = parseInt(qParams['dp']);
+      }
+      //sorting
+      //if (qParams['sk']) { 
+      //  this.sortKey = qParams['sk'];
+      //  this.sortPath = this.sortKey.split('.');
+      //}
+      //if (qParams['sd']==1) {
+      //  this.reverse = true;
+      //}
+    });
+
     //Prepare Department list
     this.dataSvc.getDepartments()
       .subscribe(result => {
@@ -49,10 +67,25 @@ export class EmployeesType2Component implements OnInit {
       }, err => {
         console.log('dataSvc.getDepartments ERROR!');
       });
+
+    //Prepare Employee List
+    this.employeesObservable$ = this.dataSvc.getAllEmployees(this.selDepartmentId, this.searchKeyword, this.sortPath, this.reverse);
+
   }
 
   private updateEmployeeList() {
     this.employeesObservable$ = this.dataSvc.getAllEmployees(this.selDepartmentId, this.searchKeyword, this.sortPath, this.reverse);
+
+    //Update URL route
+    this.myRoute.navigate(['/employee-list-2'], {
+      queryParams: {
+        kw: this.searchKeyword,
+        dp: this.selDepartmentId,
+        //sk: this.sortKey,
+        //sd: (this.reverse)?1:0
+      }
+    });
+    
   }
 
   clearKeyword() {
